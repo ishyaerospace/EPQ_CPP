@@ -95,3 +95,11 @@ lambda function is a small, anonymous function. it can be written directly in th
 Syntax:
 `[capture] (parameters) { code };`
 
+capture clause []
+you can use [] brackets to give a lambda access to variables outside of it.
+example:
+`int main() {`
+`  int x = 10;`
+`  auto show = [x]() {`
+`    cout << x;`
+`  };`
