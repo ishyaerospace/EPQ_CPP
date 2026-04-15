@@ -127,3 +127,52 @@ to inherit from a class use the : symbol
 `class Car: public Vehicle {code}`
 Car is child
 Vehicle is parent
+
+there can be multilevel inheritance where a class can inherit i child class of another class.
+
+# multiple inhertiance
+a class can be derived from more than one base class, using a comma seperated list:
+`class MyChildClass: public MyClass, public` `MyOtherClass{`
+`};`
+
+# polymorphism
+polymorphism uses those methods to perform different tasks. this allows us to perform a single action in different ways
+
+animal can `makeSound()` but differernt animals make different sounds. all animals make a sound but the sound is differernt.
+example:
+`// base class`
+`class Animal{`
+`    public:`
+`        void makeSound(){`
+`            cout << "sound";`
+`        }`
+`};`
+
+`//derived class`
+`class cat : public Animal{ // inherit from base class`
+`    public:`
+`        void makeSound(){ //overrides the function` `from the base class`
+`            cout << "meow";`
+`        }`
+`}`
+
+## polymorphism virual
+without virtual C++ decides which function to call based on pointer type, not actual object type
+
+with virtual, it checks the actual object the pointer is pointer to
+
+`base class`
+`class Animal{`
+`    public:`
+`        virtual void makeSound(){`
+`            cout << "sound";`
+`        }`
+`};`
+
+`//derived class`
+`class cat : public Animal{ // inherit from base class`
+`    public:`
+`        void makeSound() override{ //overrides the function` `from the base class`
+`            cout << "meow";`
+`        }`
+`}`
