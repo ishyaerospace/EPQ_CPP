@@ -130,12 +130,12 @@ Vehicle is parent
 
 there can be multilevel inheritance where a class can inherit i child class of another class.
 
-# multiple inhertiance
+## multiple inhertiance
 a class can be derived from more than one base class, using a comma seperated list:
 `class MyChildClass: public MyClass, public` `MyOtherClass{`
 `};`
 
-# polymorphism
+## polymorphism
 polymorphism uses those methods to perform different tasks. this allows us to perform a single action in different ways
 
 animal can `makeSound()` but differernt animals make different sounds. all animals make a sound but the sound is differernt.
@@ -161,6 +161,9 @@ without virtual C++ decides which function to call based on pointer type, not ac
 
 with virtual, it checks the actual object the pointer is pointer to
 
+a virtual function is a member function in the base class that can be overridden in derived classes
+They let different objects respond differently to the same function call
+
 `base class`
 `class Animal{`
 `    public:`
@@ -172,7 +175,43 @@ with virtual, it checks the actual object the pointer is pointer to
 `//derived class`
 `class cat : public Animal{ // inherit from base class`
 `    public:`
-`        void makeSound() override{ //overrides the function` `from the base class`
+`        void makeSound() override{ //overrides the function from the base class`
 `            cout << "meow";`
 `        }`
 `}`
+
+## -> operator in C++
+this operator is used to access memebers (like functions or variables) through a pointer
+shortcut for (*pointer).member
+
+## C++ Templates
+## templates in functions
+
+templates let you write functions/classes that work with different data types,
+
+the problem that it solves is that it prevents the need to create same functions for different data types. with templates it works with any datatype.
+
+this makes code less repetitive and more flexible
+
+syntax
+`template <Template T>`
+`return_type function_name(T papameter){`
+`    //code`
+`}`
+
+example:
+`template <typename T>`
+`T add(T a, T b) {`
+`  return a + b;`
+`}`
+
+## templates in classes
+lets classes work with any data type
+syntax
+`template <typename T>`
+`class ClassName {`
+`  // members and methods using T`
+`};` 
+
+important note: templates must be defined in the same file where they are used (usually in the .h file)
+
